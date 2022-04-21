@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Delete {% endblock %}
+
+{% block content %}
+    <h1>{{ blog.title }} delete page</h1>
+    <hr>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit" class="btn btn-primary">Create blog</button>
+</form>
+<a href = "{% url 'blog_delete' blog.slug %}">Orqaga</a>
+
+{% endblock%}
